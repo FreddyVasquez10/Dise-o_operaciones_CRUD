@@ -1,0 +1,42 @@
+[{
+  "_ID_EQUIPO": 1,
+  "NOMBRE_EQUIPO": "FC Bayern Munich"
+ },
+ {
+  "_ID_EQUIPO": 2,
+  "NOMBRE_EQUIPO": "Arsenal"
+ },
+ {
+  "_ID_EQUIPO": 3,
+  "NOMBRE_EQUIPO": "Real Madrid"
+ },
+ {
+  "_ID_EQUIPO": 4,
+  "NOMBRE_EQUIPO": "Real Sociedad"
+ },
+ {
+  "_ID_EQUIPO": 5,
+  "NOMBRE_EQUIPO": "Atletico de Madrid"
+ },
+ {
+  "_ID_EQUIPO": 6,
+  "NOMBRE_EQUIPO": "Borussia Dortmund"
+ },
+ {
+  "_ID_EQUIPO": 7,
+  "NOMBRE_EQUIPO": "Manchester City"
+ },
+ {
+  "_ID_EQUIPO": 8,
+  "NOMBRE_EQUIPO": "Barcelona"
+ },
+ {
+  "_ID_EQUIPO": 9,
+  "NOMBRE_EQUIPO": "Arsenal"
+ },
+ {
+  "_ID_EQUIPO": 10,
+  "NOMBRE_EQUIPO": "Arsenal"
+ }
+
+]

@@ -1,0 +1,89 @@
+[{
+  "_ID_GRUPO": 1,
+  "GRUPO": "A",
+  "POSICION_1":"FC Bayern Munich",
+  "POSICION_2":"Copenhagen",
+  "POSICION_3":"Galatasaray",
+  "POSICION_4":"Manchester United",
+  "PARTI_EMPAT": 2,
+  "PARTI_PERDI": 1,
+  "PARTI_GANAD": 2 
+   },
+{
+  "_ID_GRUPO": 2,
+  "GRUPO": "A",
+  "POSICION_1":"Arsenal",
+  "POSICION_2":"PSV",
+  "POSICION_3":"lens",
+  "POSICION_4":"Sevill",
+  "PARTI_EMPAT": 1,
+  "PARTI_PERDI": 2,
+  "PARTI_GANAD": 2
+   },
+{
+  "_ID_GRUPO": 3,
+  "GRUPO": "A",
+  "POSICION_1":"Real Madrid",
+  "POSICION_2":"Napoles",
+  "POSICION_3":"Braga",
+  "POSICION_4":"FC Union Berlin",
+  "PARTI_EMPAT": 2,
+  "PARTI_PERDI": 3,
+  "PARTI_GANAD": 0
+ },
+{
+  "_ID_GRUPO": 4,
+  "GRUPO": "A",
+  "POSICION_1":"Real Sociedad",
+  "POSICION_2":"Inter de Milan",
+  "POSICION_3":"Benfica",
+  "POSICION_4":"FC Red Bull Salzburg",
+  "PARTI_EMPAT": 2,
+  "PARTI_PERDI": 1,
+  "PARTI_GANAD": 2
+ },
+{
+  "_ID_GRUPO": 5,
+  "GRUPO": "E",
+  "POSICION_1":"Atletico de Madrid",
+  "POSICION_2":"Lazio",
+  "POSICION_3":"Feyenood",
+  "POSICION_4":"Celta",
+  "PARTI_EMPAT": 0,
+  "PARTI_PERDI": 5,
+  "PARTI_GANAD": 0
+ },
+{
+  "_ID_GRUPO": 6,
+  "GRUPO": "F",
+  "POSICION_1":"Borussia Dortmund",
+  "POSICION_2":"Paris Saint German",
+  "POSICION_3":"Milan",
+  "POSICION_4":"Newcastle United",
+  "PARTI_EMPAT": 5,
+  "PARTI_PERDI": 0,
+  "PARTI_GANAD": 0
+ },
+{
+  "_ID_GRUPO": 7,
+  "GRUPO": "G",
+  "POSICION_1":"Manchester City",
+  "POSICION_2":"RB Leipzig",
+  "POSICION_3":"Young Boys",
+  "POSICION_4":"Crvena Zvezda",
+  "PARTI_EMPAT": 4,
+  "PARTI_PERDI": 1,
+  "PARTI_GANAD": 0
+ },
+{
+  "_ID_GRUPO": 8,
+  "GRUPO": "H",
+  "POSICION_1":"Barcelona",
+  "POSICION_2":"FC Porto",
+  "POSICION_3":"Shakhtar Donetsk",
+  "POSICION_4":"Royal Antwerp",
+  "PARTI_EMPAT": 2,
+  "PARTI_PERDI": 2,
+  "PARTI_GANAD": 1
+  }
+  ]

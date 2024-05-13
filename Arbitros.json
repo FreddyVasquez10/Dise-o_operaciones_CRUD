@@ -1,0 +1,27 @@
+[
+    {
+        "_id": 1,
+        "nombre": "Michael Oliver",
+        "experiencia": 10
+    },
+    {
+        "_id": 2,
+        "nombre": "Felix Brych",
+        "experiencia": 15
+    },
+    {
+        "_id": 3,
+        "nombre": "Cüneyt Çakır",
+        "experiencia": 12
+    },
+    {
+        "_id": 4,
+        "nombre": "Björn Kuipers",
+        "experiencia": 14
+    },
+    {
+        "_id": 5,
+        "nombre": "Anthony Taylor",
+        "experiencia": 8
+    }
+]

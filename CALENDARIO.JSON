@@ -1,0 +1,42 @@
+   [
+    {
+        "_id": 1,
+        "equipo_local_id": 1,
+        "equipo_visitante_id": 2,
+        "fecha": "2024-05-01T18:00:00Z",
+        "arbitro_id": 1,
+        "resultado": "2-1"
+    },
+    {
+        "_id": 2,
+        "equipo_local_id": 3,
+        "equipo_visitante_id": 4,
+        "fecha": "2024-05-03T18:00:00Z",
+        "arbitro_id": 2,
+        "resultado": "0-2"
+    },
+    {
+        "_id": 3,
+        "equipo_local_id": 2,
+        "equipo_visitante_id": 5,
+        "fecha": "2024-05-05T18:00:00Z",
+        "arbitro_id": 3,
+        "resultado": "3-3"
+    },
+    {
+        "_id": 4,
+        "equipo_local_id": 4,
+        "equipo_visitante_id": 1,
+        "fecha": "2024-05-07T18:00:00Z",
+        "arbitro_id": 1,
+        "resultado": "1-2"
+    },
+    {
+        "_id": 5,
+        "equipo_local_id": 5,
+        "equipo_visitante_id": 3,
+        "fecha": "2024-05-09T18:00:00Z",
+        "arbitro_id": 2,
+        "resultado": "1-0"
+    }
+]

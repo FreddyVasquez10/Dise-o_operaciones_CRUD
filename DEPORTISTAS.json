@@ -1,0 +1,29 @@
+[{
+  "_ID": 1,
+  "NOMBRE": "Pablo Andres Lopez",
+  "EDAD": 24,
+  "NACIONALIDAD": "Español",
+  "POSICION": "Delantero",
+  "EQUIPO": "Paris Saint-Germain",
+  "NUMERO":18 ,
+  "ESTADISTICAS": {
+    "GOLES": 9,
+    "ASITENCIAS": 7,
+    "PARTIDOS_JUGADOS": 10
+  }
+},
+{
+    "_ID": 2,
+    "NOMBRE": "Juan Carlos Rodriguez",
+    "EDAD": 28,
+    "NACIONALIDAD": "Portugal",
+    "POSICION": "Volante Derecho",
+    "EQUIPO": "Paris Saint-Germain",
+    "NUMERO": 11,
+    "ESTADISTICAS": {
+      "GOLES": 3,
+      "ASITENCIAS": 7,
+      "PARTIDOS_JUGADOS": 10
+    }
+}
+]
