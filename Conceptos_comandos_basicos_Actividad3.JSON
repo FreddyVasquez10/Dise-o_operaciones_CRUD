@@ -1,0 +1,443 @@
+// 1. Iniciar MongoDB en modo de replicación:
+
+mongod --replSet "rs0" --bind_ip localhost,<IP_ADDRESS>
+
+// 2. Conectarse a MongoDB Shell:
+
+mongo --host <IP_ADDRESS>:27017
+
+// 3. CONFIGURACION DE REPLICA
+
+rs.initiate({
+  _id: "rs0",
+  members: [
+    { _id: 0, host: "localhost:27017" },
+    { _id: 1, host: "<IP_ADDRESS_1>:27017" },
+    { _id: 2, host: "<IP_ADDRESS_2>:27017" }
+  ]
+});
+
+// 4. VALIDAR EL ESTADO DE LA REPLICA
+
+rs.status();
+
+// 5. INSERTAR 
+
+db.torneo.insert({ "_ID_TORNEO": "Liga de Campeones de la UEFA","32" });
+
+// 6. AGREGAR NODO PRIMARIO
+
+sudo systemctl stop mongod
+
+
+
+// CASO DE PRUEBA 1: Verificar la Replicación de Datos
+
+db.torneo.insert({ "_ID_TORNEO": "Liga de Campeones de la UEFA","32" });
+
+
+
+// CASO DE PRUEBA 2: 
+
+conn=new Mongo("DESTOK-FREDDY:27017")
+testDB=conn.getDB("Liga de Campeones de la UEFA");
+
+/**
+ * INSERTAR REGISTROS EN EL NODO PRIMARIO
+ */
+
+conn=new Mongo("DESTOK-FREDDY:170001");
+
+
+testDB = conn.getDB("Liga de Campeones de la UEFA");
+
+// PREGUNTAR SI EL NODO PRIMARIO UTILIZA LA FUNCION isMaster()
+testDB.isMaster();
+
+// INSERTAR REGISTROS  'DEPORTISTAS'
+testDB.DEPORTISTAS.insert([
+  {
+  "_ID": 1,
+  "NOMBRE": "Pablo Andres Lopez",
+  "EDAD": 24,
+  "NACIONALIDAD": "Español",
+  "POSICION": "Delantero",
+  "EQUIPO": "Paris Saint-Germain",
+  "NUMERO":18 ,
+  "ESTADISTICAS": {
+    "GOLES": 9,
+    "ASITENCIAS": 7,
+    "PARTIDOS_JUGADOS": 10
+  }
+},
+{
+    "_ID": 2,
+    "NOMBRE": "Juan Carlos Rodriguez",
+    "EDAD": 28,
+    "NACIONALIDAD": "Portugal",
+    "POSICION": "Volante Derecho",
+    "EQUIPO": "Paris Saint-Germain",
+    "NUMERO": 11,
+    "ESTADISTICAS": {
+      "GOLES": 3,
+      "ASITENCIAS": 7,
+      "PARTIDOS_JUGADOS": 10
+    }
+},
+]);
+
+// INSERTAR REGISTROS 'ENTRENADORES'
+testDB.ENTRENADORES.insert([
+ [{
+    "_ID_ENTRENADOR": 1,
+    "NOMBRE_ENTRENADOR": "CARLOS ARURO ROMERO",
+    "EDAD" : 48,
+    "NACIONALIDAD" : "ALEMAN",
+    "EQUIPO" : "Fc Bayern Munich"
+   }
+  ]
+]);
+
+// INSERTAR REGISTROS  'GRUPOS'
+testDB.GRUPOS.insert([
+ [{
+  "_ID_GRUPO": 1,
+  "GRUPO": "A"
+   },
+{
+  "_ID_GRUPO": 2,
+  "GRUPO": "B"
+   },
+{
+    "_ID_GRUPO": 3,
+    "GRUPO": "C"
+     },
+{
+    "_ID_GRUPO": 4,
+    "GRUPO": "D"
+     },
+{
+    "_ID_GRUPO": 5,
+    "GRUPO": "E"
+     },
+{
+    "_ID_GRUPO": 6,
+    "GRUPO": "F"
+     },
+{
+    "_ID_GRUPO": 7,
+    "GRUPO": "G"
+     },
+{
+    "_ID_GRUPO": 8,
+    "GRUPO": "H"
+     }
+  
+  ]
+]);
+
+// INSERTAR REGISTROS  'TABLA_DE_POSICIONES'
+testDB.TABLA_DE_POSICIONES.insert([
+  [{
+  "_ID_GRUPO": 1,
+  "GRUPO": "A",
+  "POSICION_1":"FC Bayern Munich",
+  "POSICION_2":"Copenhagen",
+  "POSICION_3":"Galatasaray",
+  "POSICION_4":"Manchester United",
+  "PARTI_EMPAT": 2,
+  "PARTI_PERDI": 1,
+  "PARTI_GANAD": 2 
+   },
+{
+  "_ID_GRUPO": 2,
+  "GRUPO": "A",
+  "POSICION_1":"Arsenal",
+  "POSICION_2":"PSV",
+  "POSICION_3":"lens",
+  "POSICION_4":"Sevill",
+  "PARTI_EMPAT": 1,
+  "PARTI_PERDI": 2,
+  "PARTI_GANAD": 2
+   },
+{
+  "_ID_GRUPO": 3,
+  "GRUPO": "A",
+  "POSICION_1":"Real Madrid",
+  "POSICION_2":"Napoles",
+  "POSICION_3":"Braga",
+  "POSICION_4":"FC Union Berlin",
+  "PARTI_EMPAT": 2,
+  "PARTI_PERDI": 3,
+  "PARTI_GANAD": 0
+ },
+{
+  "_ID_GRUPO": 4,
+  "GRUPO": "A",
+  "POSICION_1":"Real Sociedad",
+  "POSICION_2":"Inter de Milan",
+  "POSICION_3":"Benfica",
+  "POSICION_4":"FC Red Bull Salzburg",
+  "PARTI_EMPAT": 2,
+  "PARTI_PERDI": 1,
+  "PARTI_GANAD": 2
+ },
+{
+  "_ID_GRUPO": 5,
+  "GRUPO": "E",
+  "POSICION_1":"Atletico de Madrid",
+  "POSICION_2":"Lazio",
+  "POSICION_3":"Feyenood",
+  "POSICION_4":"Celta",
+  "PARTI_EMPAT": 0,
+  "PARTI_PERDI": 5,
+  "PARTI_GANAD": 0
+ },
+{
+  "_ID_GRUPO": 6,
+  "GRUPO": "F",
+  "POSICION_1":"Borussia Dortmund",
+  "POSICION_2":"Paris Saint German",
+  "POSICION_3":"Milan",
+  "POSICION_4":"Newcastle United",
+  "PARTI_EMPAT": 5,
+  "PARTI_PERDI": 0,
+  "PARTI_GANAD": 0
+ },
+{
+  "_ID_GRUPO": 7,
+  "GRUPO": "G",
+  "POSICION_1":"Manchester City",
+  "POSICION_2":"RB Leipzig",
+  "POSICION_3":"Young Boys",
+  "POSICION_4":"Crvena Zvezda",
+  "PARTI_EMPAT": 4,
+  "PARTI_PERDI": 1,
+  "PARTI_GANAD": 0
+ },
+{
+  "_ID_GRUPO": 8,
+  "GRUPO": "H",
+  "POSICION_1":"Barcelona",
+  "POSICION_2":"FC Porto",
+  "POSICION_3":"Shakhtar Donetsk",
+  "POSICION_4":"Royal Antwerp",
+  "PARTI_EMPAT": 2,
+  "PARTI_PERDI": 2,
+  "PARTI_GANAD": 1
+  }
+  ]
+
+]);
+
+// INSERTAR REGISTROS  'CALENDARIO'
+testDB.CALENDARIO.insert([
+    [
+    {
+        "_id": 1,
+        "equipo_local_id": 1,
+        "equipo_visitante_id": 2,
+        "fecha": "2024-05-01T18:00:00Z",
+        "arbitro_id": 1,
+        "resultado": "2-1"
+    },
+    {
+        "_id": 2,
+        "equipo_local_id": 3,
+        "equipo_visitante_id": 4,
+        "fecha": "2024-05-03T18:00:00Z",
+        "arbitro_id": 2,
+        "resultado": "0-2"
+    },
+    {
+        "_id": 3,
+        "equipo_local_id": 2,
+        "equipo_visitante_id": 5,
+        "fecha": "2024-05-05T18:00:00Z",
+        "arbitro_id": 3,
+        "resultado": "3-3"
+    },
+    {
+        "_id": 4,
+        "equipo_local_id": 4,
+        "equipo_visitante_id": 1,
+        "fecha": "2024-05-07T18:00:00Z",
+        "arbitro_id": 1,
+        "resultado": "1-2"
+    },
+    {
+        "_id": 5,
+        "equipo_local_id": 5,
+        "equipo_visitante_id": 3,
+        "fecha": "2024-05-09T18:00:00Z",
+        "arbitro_id": 2,
+        "resultado": "1-0"
+    }
+]
+
+]);
+
+// INSERTAR REGISTROS  'EQUIPOS'
+testDB.EQUIPOS.insert([
+ [{
+  "_ID_EQUIPO": 1,
+  "NOMBRE_EQUIPO": "FC Bayern Munich"
+ },
+ {
+  "_ID_EQUIPO": 2,
+  "NOMBRE_EQUIPO": "Arsenal"
+ },
+ {
+  "_ID_EQUIPO": 3,
+  "NOMBRE_EQUIPO": "Real Madrid"
+ },
+ {
+  "_ID_EQUIPO": 4,
+  "NOMBRE_EQUIPO": "Real Sociedad"
+ },
+ {
+  "_ID_EQUIPO": 5,
+  "NOMBRE_EQUIPO": "Atletico de Madrid"
+ },
+ {
+  "_ID_EQUIPO": 6,
+  "NOMBRE_EQUIPO": "Borussia Dortmund"
+ },
+ {
+  "_ID_EQUIPO": 7,
+  "NOMBRE_EQUIPO": "Manchester City"
+ },
+ {
+  "_ID_EQUIPO": 8,
+  "NOMBRE_EQUIPO": "Barcelona"
+ },
+ {
+  "_ID_EQUIPO": 9,
+  "NOMBRE_EQUIPO": "Arsenal"
+ },
+ {
+  "_ID_EQUIPO": 10,
+  "NOMBRE_EQUIPO": "Arsenal"
+ }
+
+]
+]);
+
+// INSERTAR REGISTROS 'RESULTADOS'
+testDB.RESULTADOS.insert([
+ [
+    {
+        "_id": 1,
+        "encuentro_id": 1,
+        "goles_equipo_local": 2,
+        "goles_equipo_visitante": 1
+    },
+    {
+        "_id": 2,
+        "encuentro_id": 2,
+        "goles_equipo_local": 0,
+        "goles_equipo_visitante": 2
+    },
+    {
+        "_id": 3,
+        "encuentro_id": 3,
+        "goles_equipo_local": 3,
+        "goles_equipo_visitante": 3
+    },
+    {
+        "_id": 4,
+        "encuentro_id": 4,
+        "goles_equipo_local": 1,
+        "goles_equipo_visitante": 2
+    },
+    {
+        "_id": 5,
+        "encuentro_id": 5,
+        "goles_equipo_local": 1,
+        "goles_equipo_visitante": 0
+    }
+]
+
+]);
+
+//  INSERTAR REGISTROS  'ARBITROS'
+testDB.ARBITROS.insert([
+ [
+    {
+        "_id": 1,
+        "nombre": "Michael Oliver",
+        "experiencia": 10
+    },
+    {
+        "_id": 2,
+        "nombre": "Felix Brych",
+        "experiencia": 15
+    },
+    {
+        "_id": 3,
+        "nombre": "Cüneyt Çakır",
+        "experiencia": 12
+    },
+    {
+        "_id": 4,
+        "nombre": "Björn Kuipers",
+        "experiencia": 14
+    },
+    {
+        "_id": 5,
+        "nombre": "Anthony Taylor",
+        "experiencia": 8
+    }
+]
+
+]);
+
+//VALIDACION DE ALMACENAMIENTO DE LOS NODOS
+testDB.DEPORTISTAS.count();
+testDB.EQUIPOS.count();
+testDB.ENTRENADORES.count();
+testDB.GRUPOS.count();
+testDB.TABLA_DE_POSICIONES.count();
+testDB.CALENDARIO.count();
+testDB.RESULTADOS.count();
+testDB.ARBITROS.count();
+
+// CASO DE PRUEBA 3:
+// CONEXION NODO SECUNDARIO REPLICA
+connSecondary = new Mongo("DESTOK-FREDDY:27017 ") ;
+secondaryTestDB = connSecondary.getDB("Liga de Campeones de la UEFA");
+
+// COMPROBACION MAESTRO NODO SECUNDARIO
+secondaryTestDB.isMaster();
+//ACTIVAR NODO SECUNDARIO
+connSecondary.setSecondaryOk();
+
+
+// CONEXION NODO SECUNDARIO PARA REPLICA
+connSecondary = new Mongo("DESTOK-FREDDY:27017 ") ;
+secondaryTestDB = connSecondary.getDB("Liga de Campeones de la UEFA");
+
+// COMOPROBACION DE NODO SECUNDARIO
+secondaryTestDB.isMaster();
+
+//INICIAR NODO SECUNDARIO
+connSecondary.setSecondaryOk();
+
+// CASO DE PRUEBA 4:
+// DETENER EL NODO PRIMARIO
+connPrimary = new Mongo("localhost:20000")
+primaryDB = connPrimary.getDB("Liga de Campeones de la UEFA");
+
+// COMPROBACION DE NODO PRIMARIO
+primaryDB.isMaster();
+
+// CAIDA DEL NODO PRIMARIO
+primaryDB.adminCommand({shutdown : 1});
+
+//COMPROBAR SI NODO SECUNDARIO ASUMIO EL ROL
+connNewPrimary = new Mongo("localhost:27017");
+newPrimaryDB = connNewPrimary.getDB("Biblioteca"); 
+newPrimaryDB.isMaster();
+
+//SE DETIENE LA REPLICACION
+TorneoDepReplicaSet.stopSet();
